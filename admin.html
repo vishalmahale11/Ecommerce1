@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" placeholder="Enter Product Name" id="name">
+        <input type="text" placeholder="Category" id="category">
+        <input type="text" placeholder="imgURl" id="image">
+        <input type="number" placeholder="price" id="price">
+        <select id="gender">
+            <option>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <input type="submit" id="add">
+    </form>
+</body>
+</html>
+
+<script>
+
+var mainarr=JSON.parse(localStorage.getItem("product")) || [];
+
+document.querySelector("#form").addEventListener("submit",myfun)
+
+let arr=[];
+
+function myfun(){
+    event.preventDefault()
+
+    let Product = form.name.value;
+    let Category1= form.category.value;
+    let Imageurl = form.image.value;
+    let Price= form.price.value;
+    let sold=false;
+
+   let x = new Productarr(Product,Category1,Imageurl,Price);
+   arr.push(x);
+   localStorage.setItem("Product",JSON.stringify(arr));
+}
+
+function Productarr(Product,Category1,Imageurl,Price){
+    this.ProductName=Product;
+    this.Category=Category1;
+    this.ImgUrl=Imageurl;
+    this.Price=Price;
+}
+
+
+
+</script>
